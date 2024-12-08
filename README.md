@@ -37,7 +37,7 @@ The CIFAR-10 Image Classification Service is a machine learning application desi
 3. **Run the App**:
    Launch the Streamlit app:
    ```bash
-   streamlit run app.py
+   streamlit run app_.py
    ```
 
 4. **Access the App**:
