@@ -1,0 +1,9 @@
+streamlit
+torch
+torchvision
+Pillow
+requests
+matplotlib
+pandas
+sqlite3
+streamlit-js-eval
