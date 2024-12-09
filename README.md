@@ -18,10 +18,14 @@ The CIFAR-10 Image Classification Service is a machine learning application desi
 
 - **Feedback System**:
   - Allows users to validate or correct predictions with flexibility.
+  - ![image](https://github.com/user-attachments/assets/4cffcad1-0921-47bc-938f-c5d1d66a9920)
+
 
 - **Data Visualization**:
   - Displays the class distribution (correct vs. incorrect predictions) using horizontal stacked bar charts.
   - Visualizes overall prediction accuracy.
+  - ![image](https://github.com/user-attachments/assets/6b7c41cd-4900-4062-aaa3-471d58cfa4e1)
+
 
 - **Database Integration**:
   - Stores images and their classifications in an SQLite database.
