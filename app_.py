@@ -350,7 +350,13 @@ def final_save(image_path, predicted_class, correct_class=None):
 
 
 # Streamlit app
-st.title("CIFAR-10 Image Classification")
+st.markdown(
+    """
+    <h1 style="text-align: center; font-size: 2.5rem;">EAI 6010:Module 5: Assignment - Microservice for a model</h1>
+    <h2 style="text-align: center; font-size: 1.8rem; color: #555;">CIFAR-10 Image Classification</h2>
+    """,
+    unsafe_allow_html=True
+)
 st.write("Upload an image to classify it or provide a URL to an image.")
 
 # Initialize the database
@@ -733,6 +739,8 @@ def show_filterable_image_history():
 
 def show_dashboard():
     image_count = get_image_count()
+    # st.sidebar.header("Module 5: Assignment - Microservice for a model")
+    st.sidebar.header("Author: Venkat Neelraj Nitta")
     st.sidebar.header("Dashboard")
     st.sidebar.write(f"Total images uploaded: {image_count}")
 
@@ -775,6 +783,22 @@ with col2:
 with col3:
     # st.markdown("### Correct Predictions")
     download_images_button("correct", "Download Correct Predictions and Labels")
+
+# def add_footer():
+#     st.markdown(
+#         """
+#         <hr style="margin-top: 3rem;">
+#         <footer style="text-align: center; font-size: 0.9rem; color: #999;">
+#             <strong>Module 5: Assignment - Microservice for a model</strong><br>
+#             Author - Venkat Neelraj Nitta
+#         </footer>
+#         """,
+#         unsafe_allow_html=True
+#     )
+
+# # Add the footer at the end of the app
+# add_footer()
+
 
 # Save the image and dynamically update the dashboard
 
