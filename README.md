@@ -24,7 +24,7 @@ The CIFAR-10 Image Classification Service is a machine learning application desi
 - **Data Visualization**:
   - Displays the class distribution (correct vs. incorrect predictions) using horizontal stacked bar charts.
   - Visualizes overall prediction accuracy.
-  - <img src="https://github.com/user-attachments/assets/6b7c41cd-4900-4062-aaa3-471" width = "50%">
+  - <img src="https://github.com/user-attachments/assets/9eb26111-822b-4449-9e19-cccd97e96666" width = "50%">
 
 
 - **Database Integration**:
