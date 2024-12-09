@@ -1,21 +1,36 @@
 # CIFAR-10 Image Classification Service
 
 ## **Overview**
-The CIFAR-10 Image Classification Service is a machine learning application designed to classify images into one of ten categories using a ResNet-18 model. The app is built with Streamlit and supports uploading multiple image files or providing image URLs for classification. It includes features for saving predictions, correcting predictions, and visualizing classification data.
+The CIFAR-10 Image Classification Service is a machine learning application designed to classify images into one of ten categories using a ResNet-18 model. The app is built with Streamlit and supports uploading multiple image files or providing image URLs for classification. It includes features for saving predictions, correcting predictions, visualizing classification data, and downloading data for further analysis or retraining.
 
 ---
 
 ## **Features**
-- **Image Classification**: Classifies images into one of ten categories: airplane, automobile, bird, cat, deer, dog, frog, horse, ship, or truck.
-- **File and URL Support**: Accepts images via file upload or direct URLs.
-- **Feedback System**: Allows users to correct predictions if needed.
+- **Image Classification**:
+  - Classifies images into one of ten categories: airplane, automobile, bird, cat, deer, dog, frog, horse, ship, or truck.
+  - Allows users to provide custom labels for images outside the predefined categories.
+
+- **File Support**:
+  - Accepts images via file upload.
+
+- **Feedback System**:
+  - Allows users to validate or correct predictions with flexibility.
+
 - **Data Visualization**:
-  - Class distribution of uploaded images.
-  - Prediction accuracy (correct vs. incorrect predictions).
-- **Database Integration**: Stores images and their classifications in an SQLite database.
+  - Displays the class distribution (correct vs. incorrect predictions) using horizontal stacked bar charts.
+  - Visualizes overall prediction accuracy.
+
+- **Database Integration**:
+  - Stores images and their classifications in an SQLite database.
+  - Allows users to view and filter image history (all, correct, or incorrect predictions).
+
 - **Data Management**:
-  - Clear all database entries.
-  - Refresh app interface.
+  - Clear individual or all database entries.
+  - Multi-select file upload.
+  - Download images and their corrected labels as ZIP files for training or analysis.
+
+- **Error Handling**:
+  - Automatically filters invalid input types and gracefully handles errors.
 
 ---
 
@@ -51,18 +66,21 @@ The CIFAR-10 Image Classification Service is a machine learning application desi
    - Alternatively, provide a direct URL to an image.
 
 2. **View Predictions**:
-   - The app predicts the class of each uploaded image and displays it.
-   - Predictions can be confirmed or corrected by the user.
+   - The app predicts the class of each uploaded image and displays it with a confidence score.
+   - If the prediction is incorrect, users can correct it by selecting a label from the predefined categories or providing a custom label.
 
 3. **Save Data**:
    - Save the predictions and corrections to the database by clicking the "Save" button.
 
 4. **Visualize Data**:
-   - View the class distribution and prediction accuracy on the sidebar.
+   - View the class distribution and prediction accuracy in the sidebar.
 
 5. **Manage Data**:
    - Use the "Clear Database" button to delete all saved data.
    - Use the "Clear All" button to refresh the app interface.
+
+6. **Download Data**:
+   - Download all images and their corrected labels, or filter specific datasets (e.g., incorrect predictions).
 
 ---
 
@@ -80,8 +98,12 @@ The project uses the following libraries and frameworks:
 - `torch`
 - `torchvision`
 - `Pillow`
+- `requests`
 - `sqlite3`
-- `matplotlib`
+- `plotly`
+- `st_aggrid`
+- `streamlit-js-eval`
+- `zipfile`
 
 Install all dependencies with:
 ```bash
@@ -90,15 +112,31 @@ pip install -r requirements.txt
 
 ---
 
-## **License**
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+## **Model and Dataset**
+
+### **Model**
+The application uses a fine-tuned **ResNet-18** model, optimized for classifying CIFAR-10 images into 10 predefined categories. The model architecture is robust and efficient, leveraging residual connections for improved performance.
+
+### **Dataset**
+The **CIFAR-10 dataset** consists of 60,000 color images (32x32 pixels) categorized into the following classes:
+1. Airplane
+2. Automobile
+3. Bird
+4. Cat
+5. Deer
+6. Dog
+7. Frog
+8. Horse
+9. Ship
+10. Truck
+
+**Dataset Details:**
+- **Training Data:** 60,000 images.
+- **Test Data:** 10,000 images.
+- **Image Format:** RGB color images with equal representation across categories.
 
 ---
 
 ## **Acknowledgments**
 - The CIFAR-10 dataset.
 - ResNet architecture by Kaiming He et al.
-
----
-
-
