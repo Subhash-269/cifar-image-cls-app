@@ -1,5 +1,8 @@
 # CIFAR-10 Image Classification Service
 
+![Raw_App_Screenshot](https://github.com/user-attachments/assets/c3b57aff-c6a6-4fa3-9312-74927a61d59a)
+
+
 ## **Overview**
 The CIFAR-10 Image Classification Service is a machine learning application designed to classify images into one of ten categories using a ResNet-18 model. The app is built with Streamlit and supports uploading multiple image files or providing image URLs for classification. It includes features for saving predictions, correcting predictions, visualizing classification data, and downloading data for further analysis or retraining.
 
