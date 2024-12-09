@@ -3,6 +3,7 @@ torch
 torchvision
 Pillow
 requests
-matplotlib
 pandas
 streamlit-js-eval
+plotly
+streamlit-aggrid
