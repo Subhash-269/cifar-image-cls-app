@@ -1,4 +1,4 @@
-# CIFAR-10 Image Classification Service
+# CIFAR-10 Image Classification App
 
 ![Raw_App_Screenshot](https://github.com/user-attachments/assets/c3b57aff-c6a6-4fa3-9312-74927a61d59a)
 
@@ -18,7 +18,7 @@ The CIFAR-10 Image Classification Service is a machine learning application desi
 
 - **Feedback System**:
   - Allows users to validate or correct predictions with flexibility.
-  - ![image](https://github.com/user-attachments/assets/4cffcad1-0921-47bc-938f-c5d1d66a9920)
+  - <img src="https://github.com/user-attachments/assets/4cffcad1-0921-47bc-938f-c5d1d66a9920" width="50%">
 
 
 - **Data Visualization**:
