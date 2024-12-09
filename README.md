@@ -30,6 +30,8 @@ The CIFAR-10 Image Classification Service is a machine learning application desi
 - **Database Integration**:
   - Stores images and their classifications in an SQLite database.
   - Allows users to view and filter image history (all, correct, or incorrect predictions).
+  - ![image](https://github.com/user-attachments/assets/0af54f27-93f0-4bc6-8182-08c59ecaf701)
+
 
 - **Data Management**:
   - Clear individual or all database entries.
