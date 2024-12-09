@@ -357,8 +357,14 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-st.write("Upload an image to classify it or provide a URL to an image.")
 
+# Add a section to display the classes the model can predict
+st.markdown("### What Can the Model Predict?")
+st.write("The model is trained to classify images into the following categories:")
+class_names = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
+st.write(", ".join([f"**{cls}**" for cls in class_names]))
+
+st.write("Upload an image to classify it")
 # Initialize the database
 init_db()  # Only initialize the database, do not clear it
 # clear_db()
@@ -378,7 +384,7 @@ image_count = get_image_count()
 uploaded_files = st.file_uploader("Choose images...", type=["jpg", "jpeg", "png"], accept_multiple_files=True)
 
 # Input for image URL
-image_url = st.text_input("Or enter the URL of an image:")
+# image_url = st.text_input("Or enter the URL of an image:")
 
 image = None
 predicted_class = None
@@ -434,6 +440,47 @@ if uploaded_files:
                     st.success(f"Image '{uploaded_file.name}' and its class saved to the database.")
         except Exception as e:
             st.error(f"Error processing {uploaded_file.name}: {e}")
+
+# if image_url:
+#     try:
+#         # Fetch the image from the URL
+#         response = requests.get(image_url)
+#         response.raise_for_status()  # Raise an error for invalid responses
+#         image = Image.open(BytesIO(response.content))
+
+#         # Add a unique timestamp to create a temporary file path for the fetched image
+#         timestamp = int(time.time())
+#         temp_file_path = f"temp_images/{timestamp}_url_image.jpg"
+#         os.makedirs(os.path.dirname(temp_file_path), exist_ok=True)
+#         image.save(temp_file_path)
+
+#         # Predict class and confidence
+#         st.write(f"Processing the image from URL: {image_url}")
+#         class_id, confidence = predict(image)
+#         class_names = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
+#         predicted_class = class_names[class_id]
+
+#         # Display results
+#         col1, col2 = st.columns([1, 2])
+#         with col1:
+#             st.image(image, caption="Fetched Image", use_container_width=True)
+#         with col2:
+#             st.write(f"**Predicted class:** {predicted_class}")
+#             st.write(f"**Confidence score:** {confidence:.2f}")
+#             correct_class = st.radio(f"Is the prediction correct for the image from URL?", ["Yes", "No"], horizontal=True)
+#             if correct_class == "No":
+#                 correct_class_name = st.selectbox("Select the correct class:", class_names)
+#             else:
+#                 correct_class_name = predicted_class
+
+#             if st.button("Save URL Image", key=f"save_button_{timestamp}"):
+#                 insert_image(image_url, predicted_class, correct_class_name, confidence)
+#                 st.success(f"Image from URL '{image_url}' and its class saved to the database.")
+
+#     except Exception as e:
+#         st.error(f"Error processing image from URL: {e}")
+
+
 
 
 # if image is not None:
